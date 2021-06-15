@@ -3,14 +3,14 @@ import React, { Component } from 'react';
 class Counter extends Component {
     state = {
         count: 0,
-        tags:['tag1','tag2','tag3']
+        
     }
     // constructor(){ //use if you dont use arrow function with handleIncrement
     //     super();
     //     this.handleIncrement = this.handleIncrement.bind(this);
     // }
     handleIncrement = () =>{
-        console.log("increment clicked",this)
+        this.setState({count:this.state.count +1});
     }
     styles ={
         fontSize: 25,
@@ -23,13 +23,11 @@ class Counter extends Component {
         return (
         <div>
             <span style={this.styles} className={this.getBadgeClasses()}>{this.formatCount()}</span> 
-            <button onClick={this.handleIncrement()} 
+            <button onClick={this.handleIncrement} 
             className="btn btn-secondary btn-sm">
             Increment
             </button>
-            <ul>
-                {this.state.tags.map(tag => <li key={tag}>{tag}</li>)}
-            </ul>
+            
         </div>
         );
     }
