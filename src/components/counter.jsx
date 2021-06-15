@@ -10,20 +10,22 @@ class Counter extends Component {
     //     this.handleIncrement = this.handleIncrement.bind(this);
     // }
     handleIncrement = () =>{
+        
         this.setState({count:this.state.count +1});
     }
-    styles ={
-        fontSize: 25,
-        fontSizeweight:"bold",
-        fontFamily:"Courier New"
-    }
+    // styles ={
+    //     fontSize: 25,
+    //     fontSizeweight:"bold",
+    //     fontFamily:"Courier New"
+    // }
 
     render() { 
+        console.log('props',this.props);
             //<span style={{fontSize:25}} className="badge  badge-primary m-2">{this.formatCount()}</span>
         return (
         <div>
-            <span style={this.styles} className={this.getBadgeClasses()}>{this.formatCount()}</span> 
-            <button onClick={this.handleIncrement} 
+            <span className={this.getBadgeClasses()}>{this.formatCount()}</span> 
+            <button onClick={ product => this.handleIncrement} 
             className="btn btn-secondary btn-sm">
             Increment
             </button>
