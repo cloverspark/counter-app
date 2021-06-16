@@ -18,22 +18,24 @@ class Counter extends Component {
     //     fontSizeweight:"bold",
     //     fontFamily:"Courier New"
     // }
-
+    handleDelete =()=>{
+           console.log('was called') 
+    }
     render() { 
-        console.log('props',this.props); //used for testing in console
+        //console.log('props',this.props); //used for testing in console
             //<span style={{fontSize:25}} className="badge  badge-primary m-2">{this.formatCount()}</span>
         return (
         <div>
-            {this.props.children}
             <span className={this.getBadgeClasses()}>{this.formatValue()}</span> 
             <button onClick={this.handleIncrement} 
             className="btn btn-secondary btn-sm">
             Increment
             </button>
-            
+            <button onClick={this.handleDelete} className="btn btn-danger btn-sm m-2" >Delete</button>
         </div>
         );
     }
+
     getBadgeClasses() {
         let classes = "badge m-2 badge-";
         classes += (this.state.value === 0) ? "warning" : "primary";
