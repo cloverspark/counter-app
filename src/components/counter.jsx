@@ -18,9 +18,7 @@ class Counter extends Component {
     //     fontSizeweight:"bold",
     //     fontFamily:"Courier New"
     // }
-    handleDelete =()=>{
-           console.log('was called') 
-    }
+    
     render() { 
         //console.log('props',this.props); //used for testing in console
             //<span style={{fontSize:25}} className="badge  badge-primary m-2">{this.formatCount()}</span>
@@ -31,7 +29,7 @@ class Counter extends Component {
             className="btn btn-secondary btn-sm">
             Increment
             </button>
-            <button onClick={this.handleDelete} className="btn btn-danger btn-sm m-2" >Delete</button>
+            <button onClick={this.props.onDelete} className="btn btn-danger btn-sm m-2" >Delete</button>
         </div>
         );
     }
